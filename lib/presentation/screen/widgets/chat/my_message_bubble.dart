@@ -21,7 +21,7 @@ class MyMessageBubble extends StatelessWidget {
               vertical: 8.0,
             ),
             child: Text(
-              'This is a message',
+              'Yes, I received your message!',
               style: const TextStyle(fontSize: 18, color: Colors.black87),
             ),
           ),
