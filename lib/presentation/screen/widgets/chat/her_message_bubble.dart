@@ -21,7 +21,7 @@ class HerMessageBubble extends StatelessWidget {
               vertical: 8.0,
             ),
             child: Text(
-              'This is a message did you receive?',
+              'This is a message did you receive? right?',
               style: const TextStyle(fontSize: 18, color: Colors.black87),
             ),
           ),
