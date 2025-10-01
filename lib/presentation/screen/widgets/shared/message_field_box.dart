@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:yes_or_no/presentation/screen/providers/chat_provider.dart';
 
 class MessageFieldBox extends StatelessWidget {
-  const MessageFieldBox({super.key});
+  final ValueChanged<String> onValue;
+  const MessageFieldBox({super.key, required this.onValue});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class MessageFieldBox extends StatelessWidget {
             return;
           } else {
             print('send message as $text using button');
+            onValue(text);
             textController.clear();
           }
         },
@@ -40,6 +43,7 @@ class MessageFieldBox extends StatelessWidget {
       decoration: inputdecoration,
       onFieldSubmitted: (value) {
         print('submited value $value using keyboard');
+        onValue(value);
         textController.clear();
         focusNode.requestFocus();
       },

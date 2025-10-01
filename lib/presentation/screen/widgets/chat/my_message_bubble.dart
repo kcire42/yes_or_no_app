@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:yes_or_no/domain/entities/message.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+  final Message message;
+  const MyMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class MyMessageBubble extends StatelessWidget {
               vertical: 8.0,
             ),
             child: Text(
-              'Yes, I received your message!',
+              message.text,
               style: const TextStyle(fontSize: 18, color: Colors.black87),
             ),
           ),
