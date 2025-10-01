@@ -10,9 +10,6 @@ class ChatProvider extends ChangeNotifier {
   Future<void> sendMessage(String text) async {
     final newMessage = Message(text: text, fromWho: FromWho.me);
     messageList.insert(0, newMessage);
-    for (var i = 0; i < messageList.length; i++) {
-      print(messageList[i].text);
-    }
     notifyListeners();
   }
 }

@@ -23,10 +23,10 @@ class MessageFieldBox extends StatelessWidget {
         onPressed: () {
           final text = textController.value.text;
           if (text.isEmpty) {
-            print('no message to send');
+            debugPrint('message is empty, not sending');
             return;
           } else {
-            print('send message as $text using button');
+            debugPrint('send message as $text using button');
             onValue(text);
             textController.clear();
           }
@@ -42,7 +42,6 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController,
       decoration: inputdecoration,
       onFieldSubmitted: (value) {
-        print('submited value $value using keyboard');
         onValue(value);
         textController.clear();
         focusNode.requestFocus();
