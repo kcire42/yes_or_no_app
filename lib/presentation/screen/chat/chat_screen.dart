@@ -41,6 +41,7 @@ class _ChatView extends StatelessWidget {
             Expanded(
               //child: Container(color: const Color.fromARGB(255, 98, 167, 224)),
               child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 reverse: true,
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
