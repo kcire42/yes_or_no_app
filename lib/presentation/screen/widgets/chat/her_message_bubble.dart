@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+  const HerMessageBubble({super.key, required this.text, required this.image});
+
+  final String text;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,13 @@ class HerMessageBubble extends StatelessWidget {
               vertical: 8.0,
             ),
             child: Text(
-              'This is a message did you receive? right?',
+              text,
               style: const TextStyle(fontSize: 18, color: Colors.black87),
             ),
           ),
         ),
         const SizedBox(height: 8.0),
-        _ImageBubble(),
+        _ImageBubble(image: image!),
         SizedBox(height: 8.0),
       ],
     );
@@ -35,13 +38,17 @@ class HerMessageBubble extends StatelessWidget {
 }
 
 class _ImageBubble extends StatelessWidget {
+  const _ImageBubble({required this.image});
+
+  final String image;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
       child: Image.network(
-        'https://yesno.wtf/assets/social/yesno-facebook-d346b192fe734eca0667f59d59b5e3c2.jpg',
+        image,
         width: size.width * 0.5,
         height: 150,
         fit: BoxFit.cover,
