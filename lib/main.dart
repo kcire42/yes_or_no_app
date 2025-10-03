@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Yes or No',
-        theme: AppTheme(2, 0).themeData(),
+        theme: AppTheme(3, 0).themeData(),
         home: const ChatScreen(),
       ),
     );
